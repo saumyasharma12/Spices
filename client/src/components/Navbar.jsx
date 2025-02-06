@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronUp, Menu } from "lucide-react";
+import { ChevronUp, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(null);
@@ -14,14 +14,14 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full max-w-[1280px] h-[100px] px-[var(--container-padding-desktop)] flex items-center justify-between mx-auto">
+    <nav className="w-full max-w-[1280px] h-[100px] px-6 flex items-center justify-between mx-auto">
       {/* Logo */}
       <div className="text-xl font-bold text-black">
         Cultiv<span className="text-yellow-400">A</span>lte
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex space-x-6 mb-0">
+      <ul className="hidden md:flex space-x-6">
         {menuItems.map((item, index) => (
           <li
             key={index}
@@ -43,11 +43,10 @@ export default function Navbar() {
       </ul>
 
       {/* Buttons */}
-      <div className="space-x-4 hidden md:block">
+      <div className="hidden md:flex space-x-4">
         <button className="bg-white text-[#124673] px-4 py-2 rounded hover:bg-green-100">
           Login
         </button>
-
         <button className="bg-[#124673] text-white px-4 py-2 rounded hover:bg-[#124673]">
           Contact Us
         </button>
@@ -55,16 +54,26 @@ export default function Navbar() {
 
       {/* Mobile Menu Button */}
       <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
-        <Menu size={24} />
+        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <ul className="absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 md:hidden">
+      <div
+        className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ${
+          mobileOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+      >
+        <button
+          className="absolute top-5 right-5"
+          onClick={() => setMobileOpen(false)}
+        >
+          <X size={28} />
+        </button>
+        <ul className="flex flex-col items-center justify-center h-full space-y-6">
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className={`cursor-pointer ${
+              className={`cursor-pointer text-lg ${
                 item === "Commodity Focus" ? "text-orange-500" : ""
               }`}
             >
@@ -72,7 +81,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-      )}
+      </div>
     </nav>
   );
 }

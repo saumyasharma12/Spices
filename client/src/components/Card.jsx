@@ -1,14 +1,13 @@
-// Card.js
 import React from "react";
-import logoImage from "../assets/images/logoimg.png"; // Import logo image
+import logoImage from "../assets/images/logoimg.png";
 
 const Card = () => {
   return (
-    <div className="absolute top-[209px] left-[161px] w-[670px] p-[40px] bg-white shadow-lg border-t-8 border-[#F29727]">
+    <div className="absolute top-[209px] left-[5%] sm:left-[161px] w-[90%] sm:w-[670px] p-[20px] sm:p-[40px] bg-white shadow-lg border-t-8 border-[#F29727]">
       {/* Container for small heading and logo image */}
-      <div className="flex items-center space-x-4">
+      <div className="flex flex-wrap items-center justify-between">
         {/* Small Heading */}
-        <div className="w-[520px] h-[49px] text-[#F29727] text-[24px] font-bold leading-[28.8px] tracking-[0.005em]">
+        <div className="text-[#F29727] text-[20px] sm:text-[24px] font-bold leading-[28.8px] tracking-[0.005em]">
           SPICES
         </div>
 
@@ -16,17 +15,17 @@ const Card = () => {
         <img
           src={logoImage}
           alt="Logo"
-          className="w-[61px] h-[58px] rounded-t-[20px] shadow-lg" // Adjust styles for logo
+          className="w-[50px] sm:w-[61px] h-[50px] sm:h-[58px] rounded-t-[20px] shadow-lg"
         />
       </div>
 
       {/* Large Heading */}
-      <h2 className="w-[620px] h-[48px] mt-2 text-[40px] font-bold leading-[48px] tracking-[0.005em] text-[#1E1E1E]">
+      <h2 className="mt-2 text-[30px] sm:text-[40px] font-bold leading-[40px] sm:leading-[48px] tracking-[0.005em] text-[#1E1E1E]">
         Exporting Spices from India
       </h2>
 
       {/* Paragraph */}
-      <p className="mt-9 text-[16px] font-medium leading-[24px] tracking-[0.005em] text-[#1E1E1E]">
+      <p className="mt-6 sm:mt-9 text-[14px] sm:text-[16px] font-medium leading-[22px] sm:leading-[24px] tracking-[0.005em] text-[#1E1E1E]">
         The Spices Board of India promotes spices cultivation, export, and research through various initiatives and regulations.
       </p>
     </div>

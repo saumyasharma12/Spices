@@ -1,14 +1,12 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaLink } from "react-icons/fa"; // Use FaTwitter instead of FaXTwitter
-
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaLink } from "react-icons/fa";
 import Allright from "./Allright";
 
 export default function Hero() {
   return (
-    <div className="flex w-full h-auto px-48"> {/* Added px-12 for overall left and right spacing */}
+    <div className="flex flex-col md:flex-row w-full h-auto px-6 md:px-48">
       {/* Left Part */}
-      <div className="flex flex-col w-[257px] gap-9 pr-18"> {/* Added pr-8 for right space in left part */}
-        {/* Table of Contents */}
+      <div className="flex flex-col w-full md:w-[257px] gap-4 md:gap-9 pr-0 md:pr-18">
         <h2 className="text-lg font-bold">TABLE OF CONTENTS</h2>
         <div className="border-l-2 border-black pl-4 space-y-2">
           <p className="text-blue-700 font-medium">Registered company</p>
@@ -29,10 +27,9 @@ export default function Hero() {
       </div>
 
       {/* Right Part */}
-      <div className="flex-1 pl-29"> {/* Added pl-8 for left space in right part */}
-        <Allright/>
+      <div className="flex-1 pl-0 md:pl-29 mt-6 md:mt-0">
+        <Allright />
       </div>
-      
     </div>
   );
 }

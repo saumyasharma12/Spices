@@ -4,6 +4,7 @@ import AllCompany from './AllCompany'
 import RegisterProcess from './RegisterProcess'
 import Gst from './Gst'
 import GstCard from './GstCard'
+import Pna from './Pna'
 
 const Allright = () => {
   return (
@@ -13,6 +14,8 @@ const Allright = () => {
         <RegisterProcess/>
         <Gst/>
         <GstCard/>
+        <Pna/>
+       
     </div>
   )
 }
