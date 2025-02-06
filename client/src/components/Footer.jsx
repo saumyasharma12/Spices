@@ -4,9 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-6">
-        {/* Top Section */}
         <div className="flex flex-wrap lg:flex-nowrap justify-between items-start lg:items-center gap-6 mb-8">
-          {/* Logo and Search Bar */}
+         
           <div className="flex flex-col gap-4 w-full lg:w-1/3">
             <div className="flex items-center">
               <span className="text-2xl font-bold">CultivAlte</span>
